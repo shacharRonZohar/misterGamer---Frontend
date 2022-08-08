@@ -10,6 +10,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-const games = ref(['123', '321'])
+const games = ref(['123', '321', '567'])
 
 </script>
