@@ -1,7 +1,9 @@
 <template>
   <div class="main-layout">
     <app-header />
-    <router-view />
+    <Suspense>
+      <router-view />
+    </Suspense>
   </div>
 </template>
 
