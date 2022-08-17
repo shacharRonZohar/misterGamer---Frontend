@@ -1,8 +1,12 @@
 <template>
-  <div>
-    I'm a home page
-    <!-- {{data}} -->
-  </div>
+  <main class="home-page-container">
+    <section class="hero-container">
+      <!-- <div class="hero-img"></div> -->
+      <router-link to="/games">
+        Play our games!
+      </router-link>
+    </section>
+  </main>
 </template>
 
 <script setup lang="ts">

@@ -2,7 +2,14 @@
   <header class="main-header">
     <div class="logo">misterGamer</div>
     <nav>
-      <router-link to="/games">Games</router-link>
+      <ul class="nav-list">
+        <li>
+          <router-link to="/">Home</router-link>
+        </li>
+        <li>
+          <router-link to="/games">Games</router-link>
+        </li>
+      </ul>
     </nav>
   </header>
 </template>

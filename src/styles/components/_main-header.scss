@@ -1,0 +1,22 @@
+.main-header {
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .nav-list {
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    // gap: 5px;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 3vh;
+      width: 5vw;
+    }
+    .router-link-active {
+      color: rgb(204, 208, 166);
+    }
+  }
+}

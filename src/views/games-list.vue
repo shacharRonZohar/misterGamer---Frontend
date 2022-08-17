@@ -1,15 +1,16 @@
 <template>
   <ul>
-    <li v-for="game in games">
-      <router-link :to="`game/${game}`">
-        {{ game }}
-      </router-link>
-    </li>
+    <game-preview v-for="game in games" :key="game._id" :game="game" />
   </ul>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
-const games = ref(['123', '321', '567'])
 
+<script setup lang="ts">
+import { computed, ref } from 'vue'
+import { useGameStore } from '@/stores/game.store'
+import gamePreview from '@/components/game-preview.vue'
+const store = useGameStore()
+await store.loadGames()
+const games = computed(() => store.games)
+console.log(games)
 </script>

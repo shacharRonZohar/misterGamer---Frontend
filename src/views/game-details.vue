@@ -5,29 +5,26 @@
       <h1>{{ game }}</h1>
     </header>
     <main class="game-container">
-      <iframe :src="`${hostUrl}/game/${game}`" frameborder="0"></iframe>
+      <iframe :src="`${hostUrl}/game/${game?._id}`" frameborder="0"></iframe>
     </main>
   </div>
 </template>
 
-<script  lang="ts">
-import { defineComponent } from 'vue'
+<script setup  lang="ts">
+import { computed, defineComponent } from 'vue'
+import { useRoute } from 'vue-router'
+import { useGameStore } from '@/stores/game.store'
 
-export default defineComponent({
-  name: 'game-details',
-  data() {
-    return {
-      game: '',
-      hostUrl: process.env.NODE_ENV === 'production' ? 'https://mister-gamer.herokuapp.com' : 'http://localhost:3031'
-    }
-  },
-  watch: {
-    'this.$route.params.gameId': {
-      async handler() {
-        this.game = this.$route.params.gameId as string || ''
-      },
-      immediate: true
-    }
-  }
-})
+const route = useRoute()
+const store = useGameStore()
+const hostUrl = process.env.NODE_ENV === 'production' ? 'https://mister-gamer.herokuapp.com' : 'http://localhost:3031'
+
+// const gameId = route.params.id
+console.log(route.params.gameId)
+const game = computed(() => store.getGameById(route.params.gameId as string))
+
+// watch( () => route.params.gameId, newId => {
+
+// })
+// const beforeRouteUpdate = (to,from) 
 </script>
