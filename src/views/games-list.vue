@@ -10,7 +10,5 @@ import { computed, ref } from 'vue'
 import { useGameStore } from '@/stores/game.store'
 import gamePreview from '@/components/game-preview.vue'
 const store = useGameStore()
-await store.loadGames()
 const games = computed(() => store.games)
-console.log(games)
 </script>

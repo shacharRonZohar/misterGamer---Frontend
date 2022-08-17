@@ -10,10 +10,8 @@ export const useGameStore = defineStore({
   }),
   getters: {
     getGames: state => state.games,
-    getGameById: state => (gameId: string) => {
-      console.log(state.games.find(({ _id }) => _id === gameId))
-      return state.games.find(({ _id }) => _id === gameId)
-    }
+    getGameById: state => (gameId: string) => state.games.find(({ _id }) => _id === gameId)
+
   },
   actions: {
     async loadGames() {

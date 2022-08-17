@@ -1,0 +1,35 @@
+.game-details {
+  display: grid;
+  grid-template: repeat(11, 1fr) / repeat(11, 1fr);
+  width: 100%;
+  max-height: 90vh;
+  .game-header {
+    grid-area: 1 / 1 / 1 / 12;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .game-container {
+    grid-area: 2/2/11/11;
+    display: flex;
+    width: 100%;
+    iframe {
+      border: 1px solid #ffce11;
+      box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.75);
+      width: 100%;
+      height: 100%;
+      // This is to make sure our styles don't leak to the inner apps
+      > * {
+        all: initial;
+        * {
+          all: unset;
+        }
+      }
+    }
+  }
+  .aside-bar {
+    grid-area: 2/1/12/1;
+  }
+}
