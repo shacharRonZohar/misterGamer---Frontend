@@ -5,7 +5,7 @@
       <h1>{{ game.title }}</h1>
     </header>
     <main class="game-container">
-      <iframe :src="`${hostUrl}/game/${game?._id}`" frameborder="0"></iframe>
+      <iframe :src="`${hostUrl}/play/${game?._id}`" frameborder="0"></iframe>
     </main>
     <aside class="aside-bar">
       <h2>Description</h2>

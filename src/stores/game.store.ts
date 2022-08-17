@@ -17,6 +17,7 @@ export const useGameStore = defineStore({
     async loadGames() {
       try {
         this.games = await gamesService.getGames()
+        console.log("Games loaded", this.games)
       } catch (err) {
         console.log(err)
       }

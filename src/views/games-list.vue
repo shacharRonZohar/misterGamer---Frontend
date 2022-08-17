@@ -11,4 +11,5 @@ import { useGameStore } from '@/stores/game.store'
 import gamePreview from '@/components/game-preview.vue'
 const store = useGameStore()
 const games = computed(() => store.games)
+
 </script>

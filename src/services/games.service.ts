@@ -1,9 +1,11 @@
+import { httpService } from './http.service'
+
 export const gamesService = {
   getGames,
 }
 
 function getGames() {
-  return Promise.resolve(_getDemoGames())
+  return httpService.get('game')
 }
 
 function _getDemoGames() {
