@@ -14,6 +14,6 @@ export default defineConfig({
   build: {
     outDir: '../backend/public',
     sourcemap: true,
-    // emptyOutDir: true,
+    emptyOutDir: true,
   }
 })

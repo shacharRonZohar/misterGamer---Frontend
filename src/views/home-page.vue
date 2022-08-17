@@ -36,6 +36,6 @@ const req = {
     }
   ]
 }
-const data = await httpService.get('crud', req)
-console.log(data)
+// const data = await httpService.get('crud', req)
+// console.log(data)
 </script>

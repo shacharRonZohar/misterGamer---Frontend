@@ -4,11 +4,9 @@
     <header class="game-header">
       <h1>{{ game }}</h1>
     </header>
-    <!-- <p>{{ description }}</p> -->
     <main class="game-container">
-      <iframe :src="`http://localhost:3031/game/${game}`" frameborder="0"></iframe>
+      <iframe :src="`${hostUrl}/game/${game}`" frameborder="0"></iframe>
     </main>
-    <!-- <iframe :src="`localhost:${game}`" frameborder="0"></iframe> -->
   </div>
 </template>
 
@@ -19,7 +17,8 @@ export default defineComponent({
   name: 'game-details',
   data() {
     return {
-      game: ''
+      game: '',
+      hostUrl: process.env.NODE_ENV === 'production' ? 'https://mister-gamer.herokuapp.com' : 'http://localhost:3031'
     }
   },
   watch: {
