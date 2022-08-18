@@ -9,6 +9,9 @@
         <li>
           <router-link to="/games">Games</router-link>
         </li>
+        <li>
+          <router-link to="/add">Add game</router-link>
+        </li>
       </ul>
     </nav>
   </header>
