@@ -1,11 +1,24 @@
 import { httpService } from './http.service'
-
+import type { NewGame } from '@/models/game.model'
 export const gamesService = {
   getGames,
+  getNewGame
 }
 
 function getGames() {
   return httpService.get('game')
+}
+
+function getNewGame(): NewGame {
+  return {
+    title: '',
+    thumbnailURL: '',
+    description: '',
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
+    categories: [],
+    files: []
+  }
 }
 
 function _getDemoGames() {
